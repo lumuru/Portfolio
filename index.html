@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Romar Morales — Photographer, Visual Designer & QA Engineer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#0a0a0a',
+            surface: '#141414',
+            light: '#f0f0f0',
+            muted: '#888888',
+            accent: '#c9a96e',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    @keyframes bounce-down {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+    .scroll-indicator { animation: bounce-down 2s ease-in-out infinite; }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-bg text-light font-sans">
+
+  <!-- Navbar -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <a href="#" class="text-sm font-semibold tracking-widest uppercase text-light hover:text-accent transition-colors">romarmorales</a>
+      <!-- Desktop links -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#work" class="text-sm text-muted hover:text-light transition-colors">Work</a>
+        <a href="#about" class="text-sm text-muted hover:text-light transition-colors">About</a>
+        <a href="#contact" class="text-sm text-muted hover:text-light transition-colors">Contact</a>
+      </div>
+      <!-- Hamburger -->
+      <button id="menu-toggle" class="md:hidden flex flex-col gap-1.5 p-1" aria-label="Toggle menu">
+        <span class="block w-6 h-0.5 bg-light transition-all duration-300" id="bar1"></span>
+        <span class="block w-6 h-0.5 bg-light transition-all duration-300" id="bar2"></span>
+        <span class="block w-6 h-0.5 bg-light transition-all duration-300" id="bar3"></span>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-bg/95 backdrop-blur-md border-t border-white/5">
+      <div class="flex flex-col items-center gap-6 py-8">
+        <a href="#work" class="text-sm text-muted hover:text-light transition-colors mobile-link">Work</a>
+        <a href="#about" class="text-sm text-muted hover:text-light transition-colors mobile-link">About</a>
+        <a href="#contact" class="text-sm text-muted hover:text-light transition-colors mobile-link">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero" class="h-screen flex flex-col items-center justify-center relative px-6">
+    <h1 class="text-5xl sm:text-6xl md:text-8xl font-extralight tracking-tight text-center">Romar Morales</h1>
+    <p class="mt-4 text-base sm:text-lg text-muted tracking-wide">Photographer &amp; Visual Designer &amp; QA Engineer</p>
+    <div class="absolute bottom-10 scroll-indicator">
+      <svg class="w-6 h-6 text-muted" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- Work -->
+  <section id="work" class="max-w-7xl mx-auto px-6 py-24">
+    <h2 class="text-xs font-semibold tracking-widest uppercase text-accent mb-16 fade-in">Selected Work</h2>
+
+    <!-- Featured 1 -->
+    <div class="mb-4 fade-in">
+      <div class="relative group overflow-hidden rounded-sm cursor-pointer">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1400&h=800&fit=crop" alt="Mountain landscape" loading="lazy" class="w-full h-[60vh] object-cover transition-all duration-500 group-hover:scale-[1.02] group-hover:brightness-110">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+          <span class="text-lg font-light tracking-wide">Mountain Solitude</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3-col grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+      <div class="fade-in">
+        <div class="relative group overflow-hidden rounded-sm cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=700&fit=crop" alt="Portrait" loading="lazy" class="w-full h-72 sm:h-80 object-cover transition-all duration-500 group-hover:scale-[1.02] group-hover:brightness-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+            <span class="text-base font-light tracking-wide">Portraits</span>
+          </div>
+        </div>
+      </div>
+      <div class="fade-in">
+        <div class="relative group overflow-hidden rounded-sm cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600&h=700&fit=crop" alt="Night sky" loading="lazy" class="w-full h-72 sm:h-80 object-cover transition-all duration-500 group-hover:scale-[1.02] group-hover:brightness-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+            <span class="text-base font-light tracking-wide">Night Skies</span>
+          </div>
+        </div>
+      </div>
+      <div class="fade-in">
+        <div class="relative group overflow-hidden rounded-sm cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?w=600&h=700&fit=crop" alt="Urban" loading="lazy" class="w-full h-72 sm:h-80 object-cover transition-all duration-500 group-hover:scale-[1.02] group-hover:brightness-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+            <span class="text-base font-light tracking-wide">Urban Light</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured 2 -->
+    <div class="mb-4 fade-in">
+      <div class="relative group overflow-hidden rounded-sm cursor-pointer">
+        <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1400&h=800&fit=crop" alt="Forest" loading="lazy" class="w-full h-[65vh] object-cover transition-all duration-500 group-hover:scale-[1.02] group-hover:brightness-110">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+          <span class="text-lg font-light tracking-wide">Forest Whispers</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2-col grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+      <div class="fade-in">
+        <div class="relative group overflow-hidden rounded-sm cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&h=800&fit=crop" alt="Street photography" loading="lazy" class="w-full h-80 sm:h-96 object-cover transition-all duration-500 group-hover:scale-[1.02] group-hover:brightness-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+            <span class="text-base font-light tracking-wide">Street Stories</span>
+          </div>
+        </div>
+      </div>
+      <div class="fade-in">
+        <div class="relative group overflow-hidden rounded-sm cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=700&h=800&fit=crop" alt="Ocean" loading="lazy" class="w-full h-80 sm:h-96 object-cover transition-all duration-500 group-hover:scale-[1.02] group-hover:brightness-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+            <span class="text-base font-light tracking-wide">Ocean Calm</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured 3 -->
+    <div class="fade-in">
+      <div class="relative group overflow-hidden rounded-sm cursor-pointer">
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1400&h=800&fit=crop" alt="Golden hour landscape" loading="lazy" class="w-full h-[60vh] object-cover transition-all duration-500 group-hover:scale-[1.02] group-hover:brightness-110">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+          <span class="text-lg font-light tracking-wide">Golden Hour</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="max-w-3xl mx-auto px-6 py-24">
+    <h2 class="text-xs font-semibold tracking-widest uppercase text-accent mb-8 fade-in">About</h2>
+    <p class="text-lg sm:text-xl font-light leading-relaxed text-muted fade-in">
+      I'm a photographer, visual designer, and Quality Assurance Engineer based in the Philippines. I capture moments that tell stories through photography, create compelling visuals, and ensure software quality through meticulous testing. From landscapes to test cases, I bring the same eye for detail to everything I do.
+    </p>
+  </section>
+
+  <!-- Footer / Contact -->
+  <footer id="contact" class="border-t border-white/5 bg-surface">
+    <div class="max-w-7xl mx-auto px-6 py-16">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+        <div class="fade-in">
+          <p class="text-sm text-muted mb-2">Let's connect</p>
+          <p class="text-2xl sm:text-3xl font-light">
+            <a href="mailto:hello@romarmorales.com" class="hover:text-accent transition-colors">hello@romarmorales.com</a>
+          </p>
+        </div>
+        <div class="flex items-center gap-6 fade-in">
+          <!-- Instagram -->
+          <a href="#" class="text-muted hover:text-light transition-colors" aria-label="Instagram">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+            </svg>
+          </a>
+          <!-- Behance -->
+          <a href="#" class="text-muted hover:text-light transition-colors" aria-label="Behance">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988H0V5.021h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 6.053-2.207 7.061zM2.928 8.986v3.888h3.57c2.127 0 2.537-1.865 1.123-2.965-.862-.671-2.332-.923-4.693-.923zm0 6.888v3.999h4.142c2.449 0 2.758-2.252 1.399-3.167-.727-.49-2.396-.832-5.541-.832z"/>
+            </svg>
+          </a>
+          <!-- LinkedIn -->
+          <a href="#" class="text-muted hover:text-light transition-colors" aria-label="LinkedIn">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <p class="mt-12 text-xs text-muted/50">&copy; 2026 Romar Morales. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Navbar scroll behavior
+    const navbar = document.getElementById('navbar');
+    const hero = document.getElementById('hero');
+    const observer = new IntersectionObserver(([entry]) => {
+      navbar.classList.toggle('bg-bg/95', !entry.isIntersecting);
+      navbar.classList.toggle('backdrop-blur-md', !entry.isIntersecting);
+      navbar.classList.toggle('shadow-lg', !entry.isIntersecting);
+      navbar.classList.toggle('shadow-black/20', !entry.isIntersecting);
+    }, { threshold: 0.1 });
+    observer.observe(hero);
+
+    // Fade-in on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    faders.forEach(el => fadeObserver.observe(el));
+
+    // Mobile menu toggle
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      document.getElementById('bar1').classList.toggle('rotate-45');
+      document.getElementById('bar1').classList.toggle('translate-y-2');
+      document.getElementById('bar2').classList.toggle('opacity-0');
+      document.getElementById('bar3').classList.toggle('-rotate-45');
+      document.getElementById('bar3').classList.toggle('-translate-y-2');
+    });
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+        document.getElementById('bar1').classList.remove('rotate-45', 'translate-y-2');
+        document.getElementById('bar2').classList.remove('opacity-0');
+        document.getElementById('bar3').classList.remove('-rotate-45', '-translate-y-2');
+      });
+    });
+  </script>
+</body>
+</html>
